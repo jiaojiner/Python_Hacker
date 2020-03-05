@@ -7,6 +7,7 @@
 from scapy.all import *
 import logging
 logging.getLogger("scapy.runtime").setLevel(logging.ERROR)
+# 思科设备可使用show control-plane host open-ports查看开放端口
 
 
 def scapy_ping_one(host):
