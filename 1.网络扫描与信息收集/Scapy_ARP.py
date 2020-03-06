@@ -64,9 +64,9 @@ def get_ipv6_address(ifname):  # 获取接口ipv6地址
     return netifaces.ifaddresses(get_ifname(ifname))[netifaces.AF_INET6][0]['addr']
 
 
-def arp_request(ip_address, ifname='ens33'):
+def arp_request(ip_address, ifname='eth0'):
     # 获取本机IP地址
-    localip = get_ip_address(ifname)['ip_address']
+    localip = get_ip_address(ifname)
     # 获取本机MAC地址
     localmac = get_mac_address(ifname)
     try:  # 发送ARP请求并等待响应
@@ -122,5 +122,5 @@ if __name__ == '__main__':
     print('活动IP地址如下:')
     for ip in scapy_arp_scan(sys.argv[1]):
         print(str(ip))
-    t2= time.time()
+    t2 = time.time()
     print('本次扫描时间: %.2f' % (t2-t1))  # 计算并且打印扫描时间

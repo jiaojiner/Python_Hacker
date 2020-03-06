@@ -62,4 +62,5 @@ if __name__ == '__main__':
     host = input('请输入扫描主机的IP地址: ')
     port_low = input('请输入扫描端口的最低端口号: ')
     port_high = input('请输入扫描端口的最高端口号: ')
+    print('主机', host, '开放的端口号如下：')
     syn_scan_final(host, port_low, port_high)

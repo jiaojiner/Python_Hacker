@@ -23,8 +23,10 @@ def udp_port(host, low_port, high_port):
         scan_port_notopen = []
         result_list = result[0].res
         for i in range(len(result_list)):
-            if result[i][1].haslayer(ICMP):
-                scan_port_notopen.append(result[i][1][3].fiedls['dport'])
+            if result_list[i][1].haslayer(ICMP):
+                scan_port_notopen.append(result_list[i][1][3].fields['dport'])
+                scan_port_notopen.append(i[1].getlayer('UDP in ICMP').fields['dport'])
+
         return list(set(scan_port).difference(set(scan_port_notopen)))
 
 

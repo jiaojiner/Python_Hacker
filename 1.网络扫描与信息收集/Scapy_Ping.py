@@ -64,4 +64,4 @@ if __name__ == '__main__':
     for ip in scapy_ping_scan(sys.argv[1]):
         print(str(ip))
     t2 = time.time()
-    print('本次扫描时间: %.2f' % (t2 - t1))  # 计算并且打印扫描时间
+    print('本次扫描时间: %.2f' % (t2 - t1), 'ms')  # 计算并且打印扫描时间

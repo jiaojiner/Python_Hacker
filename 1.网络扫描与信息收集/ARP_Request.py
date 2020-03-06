@@ -63,7 +63,7 @@ def get_ipv6_address(ifname):  # 获取接口ipv6地址
 
 def arp_request(ip_address, ifname='ens33'):
     # 获取本机IP地址
-    localip = get_ip_address(ifname)['ip_address']
+    localip = get_ip_address(ifname)
     # 获取本机MAC地址
     localmac = get_mac_address(ifname)
     try:  # 发送ARP请求并等待响应
