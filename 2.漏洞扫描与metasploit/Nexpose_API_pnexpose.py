@@ -1,6 +1,6 @@
 #!/usr/bin/python
 
-import urllib2
+# import urllib2
 from lxml import etree
 from lxml import objectify
 import random
